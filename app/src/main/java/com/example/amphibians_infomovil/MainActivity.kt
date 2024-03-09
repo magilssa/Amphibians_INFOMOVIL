@@ -1,8 +1,10 @@
 package com.example.amphibians_infomovil
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresExtension
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -14,6 +16,7 @@ import com.example.amphibians_infomovil.ui.AmphibiansApp
 import com.example.amphibians_infomovil.ui.theme.Amphibians_INFOMOVILTheme
 
 class MainActivity : ComponentActivity() {
+    @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -23,6 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    //Hay problemas con la versión 7 del sdk
                     AmphibiansApp()
                 }
             }
