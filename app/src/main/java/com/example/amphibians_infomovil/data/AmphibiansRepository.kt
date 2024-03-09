@@ -10,6 +10,5 @@ interface AmphibiansRepository {
 class DefaultAmphibiansRepository(
     private val amphibiansApiService: AmphibiansApiService
 ) : AmphibiansRepository {
-    /** Retrieves list of amphibians from underlying data source */
     override suspend fun getAmphibians(): List<Amphibian> = amphibiansApiService.getAmphibians()
 }
